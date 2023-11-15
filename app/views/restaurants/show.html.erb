@@ -15,7 +15,24 @@
        <%= "Phone number not avalaible" %>
     <% end %>
   </div>
-  <div class="card mt-5 ps-1">
-    <%= link_to "Back", restaurants_path %>
+
+  <div class="d-flex mt-5 ps-1">
+    <div class="card">
+      <p><%= link_to "Edit", edit_restaurant_path(@restaurant) %></p>
+      <p><%= link_to "Delete",
+        restaurant_path(@restaurant),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %></p>
+      <p><%= link_to "Back", restaurants_path %></p>
+    </div>
   </div>
+
+  <p><strong>Reviews</strong></p>
+  <ul class="list-group">
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item"><%= review.content %></li>
+    <% end %>
+  </ul>
+  <br>
+
 </div>

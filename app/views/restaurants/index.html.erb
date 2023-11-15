@@ -1,11 +1,11 @@
 <div class="container mt-5 d-flex justify-content-between">
   <% @restaurants.each do |restaurant| %>
     <%= link_to restaurant_path(restaurant) do %>
-      <div class="card rounded-3 text-primary px-2 text-center">
+      <div class="card rounded-3 text-primary px-2 flex-wrap text-center">
         <p><%= restaurant.name %></p>
         <p><%= restaurant.category %></p>
       </div>
     <% end %>
   <% end %>
-  <p class="align-self-center"><%= link_to "Add a restaurant", new_restaurant_path %></p>
+  <p class=" flex-column align-self-center "><%= link_to "Add a restaurant", new_restaurant_path %></p>
 </div>
