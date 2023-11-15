@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="card mt-2 ps-1">
+    <%= @restaurant.name %>
+  </div>
+  <div class="card mt-2 ps-1">
+    <%= @restaurant.category %>
+  </div>
+  <div class="card mt-2 ps-1">
+    <%= @restaurant.address %>
+  </div>
+  <div class="card mt-2 ps-1">
+    <% if @restaurant.phone_number != nil %>
+       <%= @restaurant.phone_number %>
+    <% else %>
+       <%= "Phone number not avalaible" %>
+    <% end %>
+  </div>
+  <div class="card mt-5 ps-1">
+    <%= link_to "Back", restaurants_path %>
+  </div>
+</div>
